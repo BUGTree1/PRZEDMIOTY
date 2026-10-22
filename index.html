@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal szkolny – Moja szkoła</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            color: #222;
+        }
+
+        header {
+            background-color: #205782;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #3278a8;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            min-height: 500px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            width: 65%;
+            border-radius: 8px;
+        }
+
+        aside {
+            background-color: #eaf5ff;
+            padding: 20px;
+            width: 35%;
+            border-radius: 8px;
+        }
+
+        article {
+            background-color: #f1f8ff;
+            border: 1px solid #aacde5;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        h2, h3 {
+            color: #205782;
+        }
+
+        figure {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        figure img,
+        picture img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        details {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #dceeff;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        progress, meter {
+            width: 100%;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        button {
+            background-color: #205782;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #205782;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        address {
+            font-style: normal;
+            line-height: 1.8;
+        }
+
+        dialog {
+            border: 2px solid #205782;
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            main {
+                flex-direction: column;
+            }
+
+            section, aside {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+    ZADANIE – PORTAL SZKOLNY
+
+    Cel:
+    Utwórz stronę internetową "Portal szkolny",
+    wykorzystując znaczniki semantyczne HTML5.
+
+    Wykorzystaj przygotowane style CSS.
+    Nie zmieniaj nazw znaczników w selektorach CSS.
+
+
+    1. NAGŁÓWEK STRONY – HEADER
+
+    Utwórz nagłówek strony za pomocą znacznika
+    <header>.
+
+    W nagłówku umieść:
+    - nagłówek h1 z tekstem "Portal szkolny",
+    - akapit z tekstem
+      "Witamy na stronie naszej szkoły".
+
+
+    2. MENU NAWIGACYJNE – NAV
+
+    Pod nagłówkiem utwórz element <nav>.
+
+    Umieść w nim dwa odnośniki:
+
+    - Strona główna – index.html
+    - Kontakt – kontakt.html
+
+    Do tworzenia odnośników zastosuj znacznik <a> i atrybut href.
+
+    Utwórz również plik kontakt.html,  aby drugi odnośnik prowadził do istniejącej podstrony.
+
+
+    3. GŁÓWNA ZAWARTOŚĆ STRONY – MAIN
+
+    Utwórz znacznik <main>.
+
+    Wewnątrz elementu main umieść dwie części:
+
+    LEWA CZĘŚĆ – <section>
+    PRAWA CZĘŚĆ – <aside>
+
+    Lewa część powinna zajmować 65% szerokości, a prawa 35%. -> to jest już zrobione w CSS.
+
+    Układ kolumn został przygotowany w CSS za pomocą display: flex.
+
+
+    4. LEWA CZĘŚĆ STRONY – SECTION
+
+    W elemencie <section> umieść:
+
+    a) Nagłówek h2:
+       "Aktualności szkolne".
+
+    b) Dwa artykuły za pomocą <article>.
+
+    ARTYKUŁ 1:
+    - nagłówek h3 "Dzień sportu",
+    - akapit opisujący wydarzenie,
+    - datę wydarzenia zapisaną znacznikiem <time> z atrybutem datetime="2026-10-15".
+
+    ARTYKUŁ 2:
+    - nagłówek h3 "Konkurs programistyczny",
+    - akapit opisujący konkurs,
+    - wyróżnij słowa "konkurs programistyczny"
+      znacznikiem <mark>.
+
+
+    5. ILUSTRACJA – FIGURE I FIGCAPTION
+
+    W lewej części strony dodaj ilustrację  za pomocą znacznika <figure>.
+
+    Wewnątrz umieść:
+    - obraz <img> przedstawiający szkołę,
+    - podpis <figcaption>
+      "Budynek naszej szkoły".
+
+    Obraz zapisz w folderze images.
+
+
+    6. DODATKOWE INFORMACJE – DETAILS I SUMMARY
+
+    W lewej części strony umieść
+    rozwijany panel informacyjny.
+
+    Wykorzystaj:
+    - <details>,
+    - <summary>.
+
+    Nagłówek panelu:
+    "Godziny pracy sekretariatu".
+
+    Po rozwinięciu powinien pojawić się tekst:
+    "Poniedziałek – piątek: 8:00–16:00".
+
+
+    7. PRAWA CZĘŚĆ STRONY – ASIDE
+
+    W prawej części strony umieść:
+
+    a) Nagłówek h2:
+       "Panel ucznia".
+
+    b) Formularz HTML zawierający:
+       - Imię 
+       - E-mail 
+       - Wiadomość – textarea,
+       - Przycisk "Wyślij" – button type="submit".
+
+    Wszystkie pola powinny być obowiązkowe.
+
+    Formularz nie musi przesyłać danych do serwera.
+
+
+    8. PASEK POSTĘPU – PROGRESS
+
+    W prawej części strony umieść:
+
+    - nagłówek h3 "Postęp kursu HTML",
+    - element <progress>,
+    - wartość value="60",
+    - wartość max="100".
+
+    Pod paskiem wyświetl tekst:
+    "Ukończono 60% kursu".
+
+
+    9. WSKAŹNIK WARTOŚCI – METER
+
+    W prawej części strony umieść:
+
+    - nagłówek h3 "Frekwencja klasy",
+    - element <meter>,
+    - min="0",
+    - max="100",
+    - value="85".
+
+    Pod wskaźnikiem wyświetl tekst:
+    "Frekwencja wynosi 85%".
+
+
+    10. STOPKA STRONY – FOOTER
+
+    Na dole strony utwórz znacznik <footer>.
+
+    Umieść w nim:
+
+    a) Akapit:
+       "Portal szkolny – 2026".
+
+    b) Dane kontaktowe w elemencie <address>:
+       - Adres: ul. Szkolna 10, Warszawa
+       - E-mail: sekretariat@szkola.pl
+
+    Adres e-mail powinien być odnośnikiem wykorzystującym mailto:.
+
+
+
+    11. OBRAZY RESPONSYWNE – PICTURE
+
+    W lewej części strony dodaj nagłówek h3 "Galeria szkolna".
+
+    Pod nagłówkiem utwórz element <picture>.
+
+    Wykorzystaj:
+    - <source> dla szerokości do 600px,
+    - <img> jako obraz domyślny.
+
+    Przygotuj dwa obrazy:
+    - images/szkola-mala.jpg,
+    - images/szkola-duza.jpg.
+
+
+    WYMAGANIA KOŃCOWE
+
+    - Zastosuj znaczniki semantyczne HTML5.
+    - Element main powinien występować tylko raz.
+    - Strona powinna mieć nagłówek i stopkę.
+    - W main utwórz dwie kolumny.
+    - Lewa kolumna zawiera aktualności.
+    - Prawa kolumna zawiera panel ucznia.
+    - Menu nawigacyjne zawiera dwa odnośniki.
+    - Zachowaj przygotowane style CSS.
+    - Kod HTML powinien być poprawnie zagnieżdżony.
+    - Wszystkie znaczniki wymagające zamknięcia powinny zostać prawidłowo zamknięte.
+    -->
+
+
+    <header>
+        <h1>Portal szkolny</h1>
+        <p>Witamy na stronie naszej szkoły</p>
+    </header>
+
+
+    <nav>
+        <a href="index.html">Strona Główna</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+
+
+    <main>
+
+
+        <section>
+            <h2>Aktualności szkolne</h2>
+
+            <article>
+                <h3>Dzień sportu</h3>
+                <p>- akapit opisujący wydarzenie</p>
+                <time datetime="2026-10-15"></time>
+            </article>
+
+            <article>
+                <h3>Konkurs programistyczny</h3>
+                <p>- akapit opisujący konkurs
+                 - wyróżnij słowa "konkurs programistyczny
+                znacznikiem <mark></mark></p>
+            </article>
+
+            <figure>
+                <img src="images/szkola-mala.jpg"></img>
+                <figcaption>Budynek naszej szkoły</figcaption>
+            </figure>
+
+            <details>
+                <summary>Godziny pracy sekretariatu</summary>
+                Poniedziałek – piątek: 8:00–16:00
+            </details>
+        </section>
+
+        <aside>
+            <h2>Panel ucznia</h2>
+            <form>
+                <input type="text" name="Imię">
+                <input type="text" name="E-mail">
+            </form>
+
+    b) Formularz HTML zawierający:
+       - Imię 
+       - E-mail 
+       - Wiadomość – textarea,
+       - Przycisk "Wyślij" – button type="submit".
+
+    Wszystkie pola powinny być obowiązkowe.
+
+    Formularz nie musi przesyłać danych do serwera.
+
+            <!-- Formularz HTML -->
+
+            <!-- PROGRESS -->
+
+            <!-- METER -->
+        </aside>
+
+    </main>
+
+    <!-- TUTAJ UTWÓRZ FOOTER -->
+
+
+    <!-- TUTAJ UTWÓRZ DIALOG -->
+
+
+</body>
+
+</html>
