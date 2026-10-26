@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka miejska</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f1e8;
+            color: #333;
+        }
+
+        header {
+            background-color: #514235;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header time {
+            display: block;
+            margin-top: 15px;
+        }
+
+        nav {
+            background-color: #84694f;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 65%;
+        }
+
+        aside {
+            background-color: #e8ddc9;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1;
+        }
+
+        article {
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #faf5ec;
+            border-left: 4px solid #84694f;
+        }
+
+        h2, h3 {
+            color: #514235;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        caption {
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e8ddc9;
+        }
+
+        ul, ol {
+            line-height: 1.9;
+        }
+
+        mark {
+            background-color: #ffe39a;
+        }
+
+        details {
+            background-color: #fff;
+            padding: 12px;
+            margin-top: 20px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #514235;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        address {
+            font-style: normal;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        @media (max-width: 700px) {
+            main {
+                flex-direction: column;
+            }
+
+            section, aside {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+    ZADANIE – BIBLIOTEKA MIEJSKA
+
+    Cel:
+    Utwórz stronę internetową z wykorzystaniem znaczników semantycznych HTML5.
+
+    Nie zmieniaj przygotowanych stylów CSS.
+    Samodzielnie dobierz odpowiednie znaczniki HTML.
+
+
+    1. NAGŁÓWEK STRONY
+
+    Utwórz nagłówek zawierający:
+    - h1: Biblioteka miejska – Centrum Wiedzy
+    - akapit: Twoje miejsce spotkań z książką
+    - datę: 25 października 2026 r.
+
+    Datę zapisz znacznikiem semantycznym z atrybutem datetime="2026-10-25".
+
+
+    2. NAWIGACJA
+
+    Utwórz menu z czterema odnośnikami:
+    - Aktualności -> #aktualnosci
+    - Godziny otwarcia -> #godziny
+    - Oferta biblioteki -> #oferta
+    - Kontakt -> #kontakt
+
+    Zastosuj odpowiedni znacznik semantyczny.
+
+
+    3. GŁÓWNA ZAWARTOŚĆ
+
+    Utwórz główny obszar strony.
+
+    Wewnątrz umieść lewą część z trzema sekcjami oraz prawy panel informacji.
+
+
+    4. AKTUALNOŚCI
+
+    Utwórz sekcję z id="aktualnosci".
+
+    Nagłówek h2: Aktualności
+
+    Dodaj dwa samodzielne artykuły.
+
+    ARTYKUŁ 1:
+    - h3: Spotkanie autorskie
+    - Data: 12 listopada 2026 r.
+    - Akapit:
+      Zapraszamy wszystkich miłośników literatury na spotkanie ze współczesnym pisarzem.
+      Wydarzenie odbędzie się w sali konferencyjnej  naszej biblioteki.
+
+    Wyróżnij frazę "spotkanie autorskie" jako tekst o szczególnej ważności.
+
+    ARTYKUŁ 2:
+    - h3: Nowości książkowe
+    - Akapit:
+      Do naszej biblioteki dotarły nowe książki z zakresu informatyki, historii oraz literatury pięknej.
+
+    Dodaj tekst:
+    Dostępnych jest ponad 200 nowych tytułów.
+
+    Wyróżnij "200 nowych tytułów" znacznikiem mark.
+
+
+    5. GODZINY OTWARCIA
+
+    Utwórz sekcję z id="godziny".
+
+    Dodaj h2: Godziny otwarcia
+
+    Utwórz tabelę:
+    - tytuł tabeli,
+    - wiersz nagłówkowy,
+    - nagłówki: Dzień tygodnia, Godziny otwarcia,
+    - dane zgodne z treścią zadania.
+
+    Użyj:
+    - table,
+    - caption,
+    - thead,
+    - tbody,
+    - tr,
+    - th,
+    - td.
+
+
+    6. OFERTA BIBLIOTEKI
+
+    Utwórz sekcję z id="oferta".
+
+    Dodaj h2: Co oferujemy?
+
+    Umieść listę nieuporządkowaną:
+    - Wypożyczanie książek
+    - Dostęp do komputerów i internetu
+    - Czytelnia czasopism
+    - Warsztaty edukacyjne
+    - Spotkania autorskie
+
+    Dodaj akapit:
+    Każdy czytelnik posiadający ważną kartę  biblioteczną może korzystać z naszych zbiorów bezpłatnie.
+
+    Słowo "bezpłatnie" wyróżnij znacznikiem strong.
+
+
+    7. PANEL BOCZNY
+
+    Utwórz panel z dodatkowymi informacjami.
+
+    Dodaj h2: Informacje dla czytelników
+
+    Dodaj h3: Jak zapisać się do biblioteki?
+
+    Utwórz listę uporządkowaną:
+    1. Przyjdź do biblioteki.
+    2. Okaż dokument tożsamości.
+    3. Wypełnij formularz rejestracyjny.
+    4. Odbierz kartę biblioteczną.
+
+    Dodaj rozwijany panel:
+    - Nagłówek: Regulamin wypożyczania
+    - Treść:
+      Jednorazowo można wypożyczyć maksymalnie 5 książek na okres 30 dni.
+
+    Wykorzystaj znaczniki details i summary.
+
+
+    8. STOPKA I KONTAKT
+
+    Utwórz stopkę z id="kontakt".
+
+    Dodaj akapit:
+    © 2026 Biblioteka miejska – Centrum Wiedzy
+
+    Dodaj dane kontaktowe:
+    Biblioteka miejska – Centrum Wiedzy
+    ul. Książkowa 15, 00-001 Warszawa
+    E-mail: kontakt@biblioteka.pl
+    Telefon: 22 123 45 67
+
+    Użyj znacznika semantycznego address.
+
+    E-mail powinien używać mailto:.
+    Telefon powinien używać tel:.
+
+
+    WYMAGANIA KOŃCOWE
+
+    - Zastosuj znaczniki semantyczne HTML5.
+    - Użyj jednego głównego obszaru strony.
+    - Utwórz nagłówek i stopkę.
+    - Poprawnie zagnieżdź znaczniki.
+    - Utwórz menu z czterema odnośnikami.
+    - Utwórz dwa samodzielne artykuły.
+    - Dodaj tabelę z godzinami otwarcia.
+    - Dodaj listę uporządkowaną i nieuporządkowaną.
+    - Zastosuj znaczniki daty.
+    - Dodaj dane kontaktowe.
+    - Nie modyfikuj przygotowanego CSS.
+    -->
+
+
+    <header>
+        <h1>Biblioteka miejska – Centrum Wiedzy</h1>
+        <p>Twoje miejsce spotkań z książką</p>
+        <time datetime="2026-10-25">25 października 2026 r.</time>
+    </header>
+
+    <nav>
+        <a href="#aktualnosci">Aktualności</a>
+        <a href="#godziny">Godziny otwarcia</a>
+        <a href="#oferta">Oferta biblioteki</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <main>
+
+        <section id="aktualnosci">
+
+            <h2>Aktualności</h2>
+
+            <article>
+                <h3>Spotkanie autorskie</h3>
+                <time datetime="2026-11-12">12 listopada 2026 r.</time>
+                <p>
+                    Zapraszamy wszystkich miłośników literatury na spotkanie ze współczesnym pisarzem.
+                    Wydarzenie odbędzie się w sali konferencyjnej naszej biblioteki.
+
+                    Wyróżnij frazę "spotkanie autorskie" jako tekst o szczególnej ważności.
+                </p>
+            </article>
+            <article>
+                <h3>Nowości książkowe</h3>
+                <p>
+                    Do naszej biblioteki dotarły nowe książki z zakresu informatyki, historii oraz literatury pięknej.
+
+                    Dodaj tekst:
+                    Dostępnych jest ponad <mark>200 nowych tytułów</mark>.
+                </p>
+            </article>
+
+        </section>
+
+        <section id="godziny">
+
+            <h2>Godziny otwarcia</h2>
+
+            <table>
+                <caption>Godziny otwarcia</caption>
+                <thead>
+                    <tr>
+                        <th>Dzień tygodnia</th>
+                        <th>Godziny otwarcia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Poniedziałek</th>
+                        <th>7:00-21:00</th>
+                    </tr>
+                    <tr>
+                        <th>Wtorek</th>
+                        <th>7:00-20:00</th>
+                    </tr>
+                    <tr>
+                        <th>Środa</th>
+                        <th>7:00-20:00</th>
+                    </tr>
+                    <tr>
+                        <th>Czwartek</th>
+                        <th>7:00-21:00</th>
+                    </tr>
+                    <tr>
+                        <th>Piątek</th>
+                        <th>7:00-20:00</th>
+                    </tr>
+                    <tr>
+                        <th>Sobota</th>
+                        <th>8:00-14:00</th>
+                    </tr>
+                    <tr>
+                        <th>Niedziela</th>
+                        <th>8:00-12:00</th>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+        
+        <section id="oferta">
+
+            <h2>Co oferujemy?</h2>
+
+            <ul>
+                <li>Wypożyczanie książek</li>
+                <li>Dostęp do komputerów i internetu</li>
+                <li>Czytelnia czasopism</li>
+                <li>Warsztaty edukacyjne</li>
+                <li>Spotkania autorskie</li>
+            </ul>
+
+            <p>
+                Każdy czytelnik posiadający ważną kartę  biblioteczną może korzystać z naszych zbiorów <strong>bezpłatnie</strong>.
+            </p>
+        
+        </section>
+
+        <aside>
+
+            <h2>Informacje dla czytelników</h2>
+
+            <h3>Jak zapisać się do biblioteki?</h3>
+
+            <ol>
+                <li>Przyjdź do biblioteki.</li>
+                <li>Okaż dokument tożsamości.</li>
+                <li>Wypełnij formularz rejestracyjny.</li>
+                <li>Odbierz kartę biblioteczną.</li>
+            </ol>
+
+            <details>
+                <summary>Regulamin wypożyczania</summary>
+                Jednorazowo można wypożyczyć maksymalnie 5 książek na okres 30 dni.
+            </details>
+        </aside>
+
+    </main>
+
+    <!-- TUTAJ UTWÓRZ STOPKĘ Z DANYMI KONTAKTOWYMI -->
+
+
+</body>
+
+</html>
