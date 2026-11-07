@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -67,7 +66,8 @@
             margin-bottom: 15px;
         }
 
-        h2, h3 {
+        h2,
+        h3 {
             color: #205782;
         }
 
@@ -98,11 +98,13 @@
             font-weight: bold;
         }
 
-        progress, meter {
+        progress,
+        meter {
             width: 100%;
         }
 
-        input, textarea {
+        input,
+        textarea {
             width: 100%;
             padding: 8px;
             margin: 8px 0;
@@ -139,7 +141,8 @@
                 flex-direction: column;
             }
 
-            section, aside {
+            section,
+            aside {
                 width: 100%;
             }
         }
@@ -364,10 +367,11 @@
                     zdrowej rywalizacji i wspaniałej zabawy, które na długo pozostanie w pamięci uczniów i nauczycieli.
                     Od samego rana szkolne boisko i sala gimnastyczna tętniły życiem,
                     a kolorowe stroje drużyn klasowych tworzyły niezwykle energetyczną atmosferę.
-                    Uczniowie mieli okazję sprawdzić swoje siły w różnorodnych dyscyplinach – od klasycznych biegów sprinterskich i skoków w dal,
-                    przez emocjonujące turnieje gier zespołowych, aż po widowiskowe przeciąganie liny. 
+                    Uczniowie mieli okazję sprawdzić swoje siły w różnorodnych dyscyplinach – od klasycznych biegów
+                    sprinterskich i skoków w dal,
+                    przez emocjonujące turnieje gier zespołowych, aż po widowiskowe przeciąganie liny.
                 </p>
-                <time datetime="2026-10-15"></time>
+                <time datetime="2026-10-15">15 października 2026</time>
             </article>
 
             <article>
@@ -378,7 +382,8 @@
                     Stanowi on idealną przestrzeń do rozwijania logicznego myślenia,
                     kreatywności oraz umiejętności szybkiego rozwiązywania skomplikowanych problemów pod presją czasu.
                     Uczestnicy mają okazję nie tylko przetestować swoją znajomość języków programowania,
-                    ale także wymienić się doświadczeniami z rówieśnikami i poczuć smak zdrowej, technologicznej rywalizacji.
+                    ale także wymienić się doświadczeniami z rówieśnikami i poczuć smak zdrowej, technologicznej
+                    rywalizacji.
                 </p>
             </article>
 
@@ -395,12 +400,12 @@
             <h3>Galeria szkolna</h3>
 
             <picture>
-                <source width="600px"></source>
-                <img src="images/szkola-mala.jpg"></img>
+                <source srcset="images/szkola-mala.jpg" width="600"></source>
+                <img src="images/szkola-mala.jpg" width="600"></img>
             </picture>
             <picture>
-                <source width="600px"></source>
-                <img src="images/szkola-duza.jpg"></img>
+                <source srcset="images/szkola-duza.jpg" width="600"></source>
+                <img src="images/szkola-duza.jpg" width="600"></img>
             </picture>
         </section>
 
@@ -412,6 +417,7 @@
                 <textarea placeholder="Wiadomość" name="Wiadomość" required></textarea>
                 <input type="submit" name="Wyślij">
             </form>
+            <button command="show-modal" commandfor="dialog-panel-ucznia">Otwórz panel</button>
 
             <h3>Postęp kursu HTML</h3>
             <progress value="60" max="100"></progress>
@@ -425,19 +431,20 @@
     </main>
 
     <footer>
-        
-       <p>Portal szkolny – 2026</p>
-       
-       <address>
-       Adres: ul. Szkolna 10, Warszawa
-       E-mail: <a href="mailto:sekretariat@szkola.pl">sekretariat@szkola.pl</a>
-       </address>
+
+        <p>Portal szkolny – 2026</p>
+
+        <address>
+            Adres: ul. Szkolna 10, Warszawa
+            E-mail: <a href="mailto:sekretariat@szkola.pl">sekretariat@szkola.pl</a>
+        </address>
 
     </footer>
 
     <!-- TUTAJ UTWÓRZ DIALOG -->
-    <dialog>
-
+    <dialog id="dialog-panel-ucznia">
+        <p>Panel ucznia</p>
+        <button commandfor="dialog-panel-ucznia" command="close">Zamknij</button>
     </dialog>
 
 </body>

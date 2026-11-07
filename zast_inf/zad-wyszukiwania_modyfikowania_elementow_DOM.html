@@ -279,8 +279,8 @@
         // Wyszukaj akapit o identyfikatorze "opis".
         // Zmień jego treść na:  "Witamy na portalu szkolnym!".
 
-        const by_id = document.getElementById("opis");
-        by_id.textContent = "Witamy na portalu szkolnym!";
+        const opis = document.getElementById("opis");
+        opis.textContent = "Witamy na portalu szkolnym!";
 
         // =========================================
         // ZADANIE 2 – getElementsByTagName()
@@ -288,8 +288,8 @@
         // Wyszukaj wszystkie elementy h3.
         // Zmień kolor tekstu pierwszego h3 na niebieski.
 
-        const by_tag = document.getElementsByTagName("h3");
-        by_tag[0].style.color = "blue";
+        const h3s = document.getElementsByTagName("h3");
+        h3s[0].style.color = "blue";
 
         // =========================================
         // ZADANIE 3 – getElementsByClassName()
@@ -297,8 +297,8 @@
         // Wyszukaj wszystkie elementy z klasą "informacja".
         // Zmień kolor tła drugiego elementu na jasnozielony.
 
-        const by_class = document.getElementsByClassName("informacja");
-        by_class[1].style.color = "lightgreen";
+        const informacja = document.getElementsByClassName("informacja");
+        informacja[1].style.backgroundColor = "lightgreen";
 
         // =========================================
         // ZADANIE 4 – getElementsByName()
@@ -306,8 +306,8 @@
         // Wyszukaj wszystkie przyciski radio o nazwie "typSzkoly".
         // Zaznacz domyślnie "Technikum".
 
-        const by_name = document.getElementsByName("typSzkoly");
-        by_name[0].checked = true;
+        const typySzkoly = document.getElementsByName("typSzkoly");
+        typySzkoly[0].checked = true;
 
         // =========================================
         // ZADANIE 5 – querySelector()
@@ -315,14 +315,17 @@
         // Wyszukaj pierwszy element z klasą "card".
         // Ustaw obramowanie: 2px solid red.
 
-        const by_selector = document.querySelector(".card");
-        by_selector.style.border = "2px solid red";
+        const card = document.querySelector(".card");
+        card.style.border = "2px solid red";
 
         // =========================================
         // ZADANIE 6 – querySelectorAll()
         // =========================================
         // Wyszukaj wszystkie elementy z klasą "card".
         // Ustaw kolor tła każdej karty na #e0f2fe.
+
+        const cards = document.querySelectorAll(".card");
+        cards.forEach(el => el.style.backgroundColor = "#e0f2fe");
 
 
         // =========================================
@@ -332,6 +335,9 @@
         // Za pomocą closest(".card")  znajdź jego najbliższego przodka z klasą "card".
         // Zmień kolor obramowania tej karty na zielony.
 
+        const h3_card2 = h3s[1].closest(".card");
+        h3_card2.style.borderColor = "green";
+
 
         // =========================================
         // ZADANIE 8 – parentElement
@@ -340,6 +346,8 @@
         // Za pomocą parentElement znajdź jego element rodzica.
         // Zmień kolor tła rodzica na #fff3cd.
 
+        const akapit = cards[0].querySelector("p");
+	akapit.parentElement.style.backgroundColor = "#fff3cd";
 
         // =========================================
         // ZADANIE 9 – children
@@ -348,6 +356,9 @@
         // Odczytaj liczbę jej bezpośrednich elementów potomnych.
         // Wyświetl tę liczbę w elemencie o identyfikatorze "komunikat".
 
+	const aktualnosci = document.getElementById("aktualnosci");
+	const komunikat = document.getElementById("komunikat");
+	komunikat.textContent = aktualnosci.children.length;
 
         // =========================================
         // ZADANIE 10 – element.querySelector()
@@ -356,12 +367,17 @@
         // Następnie wewnątrz menu wyszukaj ostatni odnośnik a.
         // Zmień jego kolor tekstu na czerwony.
 
+	const menu = document.getElementById("menu");
+	menu.querySelector("a:last-child").style.color = "red";
 
         // =========================================
         // ZADANIE 11 – element.querySelectorAll()
         // =========================================
         // Wyszukaj sekcję "aktualnosci". Następnie wyszukaj wszystkie akapity p wewnątrz tej sekcji.
         // Ustaw styl czcionki każdego akapitu na italic.
+
+	const akapity = aktualnosci.querySelectorAll("p");
+        akapity.forEach(el => el.style.fontStyle = "italic");
 
     </script>
 

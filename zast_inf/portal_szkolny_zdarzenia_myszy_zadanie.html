@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal szkolny – zdarzenia myszy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+        }
+
+        header, footer {
+            background-color: #205782;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #3278a8;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .karta {
+            border: 1px solid gray;
+            background-color: #e2e8f0;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+    ZADANIE: PORTAL SZKOLNY – OBSŁUGA ZDARZEŃ MYSZY W JAVASCRIPT
+    HTML i CSS są przygotowane. Nie zmieniaj ich.
+    Uzupełnij wyłącznie kod JavaScript w znaczniku <script>.
+	W każdym poleceniu zastosuj odpowiednie zdarzenie myszy, np. onclick, ondblclick, onmouseover, onmouseout, onmousedown lub onmouseup. 
+	Obsługę zdarzeń możesz zrealizować bezpośrednio w znacznikach HTML lub za pomocą funkcji JavaScript
+
+    ZADANIE 1 – onclick / click (4 pkt)
+    Po pojedynczym kliknięciu przycisku "Pokaż wiadomość" zmień tekst
+    akapitu o id "wiadomosc" na „Zapraszamy na zajęcia dodatkowe!”.
+
+    ZADANIE 2 – ondblclick / dblclick (4 pkt)
+    Po dwukrotnym kliknięciu karty o id "konkurs" zmień kolor jej tła na lightgreen.
+
+    ZADANIE 3 – onmouseover / mouseover (4 pkt)
+    Po najechaniu kursorem na kartę o id "biblioteka" zmień jej kolor tła na lightyellow.
+
+    ZADANIE 4 – onmouseout / mouseout (4 pkt)
+    Kiedy kursor opuści kartę o id "biblioteka", przywróć jej pierwotny kolor tła #e2e8f0.
+
+    ZADANIE 5 – onmousedown / mousedown (4 pkt)
+    W chwili naciśnięcia przycisku o id "przyciskKolor" zmień kolor jego tła na orange.
+
+    ZADANIE 6 – onmouseup / mouseup (4 pkt)
+    W chwili zwolnienia tego samego przycisku przywróć jego kolor tła na lightgray.
+
+    Razem: 24 punkty.
+    -->
+
+    <header>
+        <h1>Portal szkolny</h1>
+        <p>Ćwiczenia ze zdarzeń myszy w JavaScript</p>
+    </header>
+
+    <nav>
+        <a href="#wiadomosci">Wiadomości</a>
+        <a href="#aktualnosci">Aktualności</a>
+        <a href="#przyciski">Przyciski</a>
+    </nav>
+
+    <main>
+        <section id="wiadomosci">
+            <h2>Wiadomości szkolne</h2>
+            <button id="pokaz">Pokaż wiadomość</button>
+            <p id="wiadomosc">Tutaj pojawi się wiadomość.</p>
+        </section>
+
+        <section id="aktualnosci">
+            <h2>Aktualności</h2>
+
+            <article class="karta" id="konkurs">
+                <h3>Konkurs programistyczny</h3>
+                <p>Kliknij dwukrotnie tę kartę, aby ją wyróżnić.</p>
+            </article>
+
+            <article class="karta" id="biblioteka">
+                <h3>Biblioteka szkolna</h3>
+                <p>Najedź na tę kartę kursorem, a następnie go odsuń.</p>
+            </article>
+        </section>
+
+        <section id="przyciski">
+            <h2>Sprawdź działanie przycisku myszy</h2>
+            <button id="przyciskKolor" style="background-color: lightgray;">
+                Naciśnij i przytrzymaj
+            </button>
+            <p>Zaobserwuj zmianę koloru podczas naciskania i zwalniania przycisku.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Portal szkolny – zdarzenia myszy</p>
+    </footer>
+
+    <script>
+        
+        // ZADANIE 1 – click
+    
+        // Wyszukaj przycisk "pokaz" i akapit "wiadomosc".
+        // Po kliknięciu zmień tekst akapitu.
+
+        const pokaz_button = document.getElementById("pokaz");
+        const pokaz_akapit = document.getElementById("wiadomosc");
+        pokaz_button.addEventListener("click", () => {
+            pokaz_akapit.textContent = "Zapraszamy na zajęcia dodatkowe!";
+        });
+      
+        // ZADANIE 2 – dblclick
+    
+        // Po podwójnym kliknięciu karty "konkurs"
+        // ustaw jej tło na lightgreen.
+
+        const konkurs = document.getElementById("konkurs");
+        konkurs.addEventListener("dblclick", () => {
+            konkurs.style.background = "lightgreen";
+        });
+
+        // ZADANIE 3 – mouseover
+        
+        // Po najechaniu na kartę "biblioteka"
+        // zmień jej tło na lightyellow.
+
+        const biblioteka = document.getElementById("biblioteka");
+        biblioteka.addEventListener("mouseover", () => {
+            biblioteka.style.background = "lightyellow";
+        });
+        
+        // ZADANIE 4 – mouseout
+      
+        // Po opuszczeniu karty "biblioteka"
+        // przywróć jej tło na #e2e8f0.
+
+        biblioteka.addEventListener("mouseout", () => {
+            biblioteka.style.background = "#e2e8f0";
+        });
+     
+        // ZADANIE 5 – mousedown
+     
+        // Przy naciśnięciu przycisku "przyciskKolor"
+        // ustaw jego tło na orange.
+
+        const przyciskKolor = document.getElementById("przyciskKolor");
+        przyciskKolor.addEventListener("mousedown", () => {
+            przyciskKolor.style.background = "orange";
+        });
+       
+        // ZADANIE 6 – mouseup
+     
+        // Przy zwolnieniu przycisku "przyciskKolor"
+        // ustaw jego tło na lightgray.
+
+        przyciskKolor.addEventListener("mouseup", () => {
+            przyciskKolor.style.background = "lightgray";
+        });
+    </script>
+</body>
+</html>
