@@ -135,21 +135,21 @@
         // Wyszukaj przycisk "pokaz" i akapit "wiadomosc".
         // Po kliknięciu zmień tekst akapitu.
 
-        const pokaz_button = document.getElementById("pokaz");
-        const pokaz_akapit = document.getElementById("wiadomosc");
-        pokaz_button.addEventListener("click", () => {
-            pokaz_akapit.textContent = "Zapraszamy na zajęcia dodatkowe!";
-        });
-      
+        const pokaz = document.getElementById("pokaz");
+        const wiadomosc = document.getElementById("wiadomosc");
+        pokaz.onclick = function () {
+            wiadomosc.textContent = "Zapraszamy na zajęcia dodatkowe!";
+        }
+
         // ZADANIE 2 – dblclick
     
         // Po podwójnym kliknięciu karty "konkurs"
         // ustaw jej tło na lightgreen.
 
         const konkurs = document.getElementById("konkurs");
-        konkurs.addEventListener("dblclick", () => {
+        konkurs.ondblclick = function () {
             konkurs.style.background = "lightgreen";
-        });
+        };
 
         // ZADANIE 3 – mouseover
         
@@ -157,18 +157,18 @@
         // zmień jej tło na lightyellow.
 
         const biblioteka = document.getElementById("biblioteka");
-        biblioteka.addEventListener("mouseover", () => {
+        biblioteka.onmouseover = function () {
             biblioteka.style.background = "lightyellow";
-        });
+        };
         
         // ZADANIE 4 – mouseout
       
         // Po opuszczeniu karty "biblioteka"
         // przywróć jej tło na #e2e8f0.
 
-        biblioteka.addEventListener("mouseout", () => {
+        biblioteka.onmouseout = function () {
             biblioteka.style.background = "#e2e8f0";
-        });
+        };
      
         // ZADANIE 5 – mousedown
      
@@ -176,18 +176,18 @@
         // ustaw jego tło na orange.
 
         const przyciskKolor = document.getElementById("przyciskKolor");
-        przyciskKolor.addEventListener("mousedown", () => {
+        przyciskKolor.onmousedown = function () {
             przyciskKolor.style.background = "orange";
-        });
+        };
        
         // ZADANIE 6 – mouseup
      
         // Przy zwolnieniu przycisku "przyciskKolor"
         // ustaw jego tło na lightgray.
 
-        przyciskKolor.addEventListener("mouseup", () => {
+        przyciskKolor.onmouseup = function () {
             przyciskKolor.style.background = "lightgray";
-        });
+        };
     </script>
 </body>
 </html>
