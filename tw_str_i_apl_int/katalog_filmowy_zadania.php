@@ -126,11 +126,17 @@
             <div class="wynik">
                 <?php
                     $bilet = [
-                        "numer" => 125
-                        "cena" => 25
-                        "rzad" => 4
+                        "numer" => 125,
+                        "cena" => 25,
+                        "rzad" => 4,
                         "miejsce" => 12
-                    ]
+                    ];
+
+                    unset($bilet["rzad"]);
+
+                    foreach($bilet as $klucz => $wartosc) {
+                        echo $klucz . ": " . $wartosc . "<br>";
+                    }
                 ?>
             </div>
         </section>

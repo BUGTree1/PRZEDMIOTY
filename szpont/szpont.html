@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal szkolny – DOM</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background-color: #1e3a5f;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 12px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 18px;
+            background-color: #334155;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #1e3a5f;
+        }
+
+        #aktualnosci {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .informacja {
+            background-color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .formularz {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .formularz label {
+            display: block;
+            margin: 12px 0 5px;
+        }
+
+        .formularz input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #94a3b8;
+            border-radius: 5px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        .radio-group label {
+            display: inline;
+        }
+
+        #wyniki {
+            background-color: #dbeafe;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 700px) {
+            #aktualnosci {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAGŁÓWEK STRONY -->
+    <header>
+        <h1>Portal szkolny</h1>
+
+        <!-- Zadanie 1: getElementById() -->
+        <p id="opis">
+            Informacje dla uczniów i nauczycieli.
+        </p>
+    </header>
+
+    <!-- MENU NAWIGACYJNE -->
+    <nav id="menu">
+        <a href="#">Strona główna</a>
+        <a href="#">Aktualności</a>
+        <a href="#">Kontakt</a>
+    </nav>
+
+    <main>
+
+        <h2>Aktualności szkolne</h2>
+
+        <!-- SEKCJA AKTUALNOŚCI -->
+        <section id="aktualnosci">
+
+            <!-- Zadanie 5: querySelector() -->
+            <!-- Zadanie 6: querySelectorAll() -->
+            <!-- Zadanie 7: closest() -->
+            <!-- Zadanie 8: parentElement -->
+            <!-- Zadanie 9: children -->
+            <!-- Zadanie 11: element.querySelectorAll() -->
+
+            <div class="card">
+                <!-- Zadanie 2: getElementsByTagName() -->
+                <h3>Rozpoczęcie roku szkolnego</h3>
+                <p>
+                    Informacje organizacyjne dla uczniów.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Konkurs programistyczny</h3>
+                <p>
+                    Zapraszamy do udziału w konkursie.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Wycieczka szkolna</h3>
+                <p>
+                    Zapisy na wycieczkę klasową.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- DODATKOWE INFORMACJE -->
+        <section>
+            <h2>Informacje dla uczniów</h2>
+
+            <!-- Zadanie 3: getElementsByClassName() -->
+
+            <p class="informacja">
+                Biblioteka szkolna jest otwarta od 8:00 do 15:00.
+            </p>
+
+            <p class="informacja">
+                Konsultacje nauczycieli odbywają się w środy.
+            </p>
+
+            <p class="informacja">
+                Zapraszamy do udziału w zajęciach dodatkowych.
+            </p>
+        </section>
+
+        <!-- FORMULARZ -->
+        <section class="formularz">
+
+            <h2>Dane ucznia</h2>
+
+            <label for="imie">Imię ucznia:</label>
+            <input type="text" id="imie" value="Anna">
+
+            <label for="klasa">Klasa:</label>
+            <input type="text" id="klasa" value="4TP">
+
+            <p>Typ szkoły:</p>
+
+            <!-- Zadanie 4: getElementsByName() -->
+            <div class="radio-group">
+
+                <label>
+                    <input type="radio" name="typSzkoly" value="Technikum">
+                    Technikum
+                </label>
+
+                <label>
+                    <input type="radio" name="typSzkoly" value="Liceum">
+                    Liceum
+                </label>
+
+            </div>
+
+        </section>
+
+        <!-- PANEL WYNIKÓW -->
+        <section id="wyniki">
+            <h2>Wyniki działania JavaScript</h2>
+            <p id="komunikat">
+                Tutaj pojawi się liczba elementów potomnych.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Portal szkolny – ćwiczenia DOM</p>
+    </footer>
+
+    <script>
+
+        // =========================================
+        // ZADANIE 1 – getElementById()
+        // =========================================
+        // Wyszukaj akapit o identyfikatorze "opis".
+        // Zmień jego treść na:  "Witamy na portalu szkolnym!".
+
+        const opis = document.getElementById("opis");
+        opis.textContent = "Witamy na portalu szkolnym!";
+
+        // =========================================
+        // ZADANIE 2 – getElementsByTagName()
+        // =========================================
+        // Wyszukaj wszystkie elementy h3.
+        // Zmień kolor tekstu pierwszego h3 na niebieski.
+
+        const h3s = document.getElementsByTagName("h3");
+        h3s[0].style.color = "blue";
+
+        // =========================================
+        // ZADANIE 3 – getElementsByClassName()
+        // =========================================
+        // Wyszukaj wszystkie elementy z klasą "informacja".
+        // Zmień kolor tła drugiego elementu na jasnozielony.
+
+        const informacja = document.getElementsByClassName("informacja");
+        informacja[1].style.backgroundColor = "lightgreen";
+
+        // =========================================
+        // ZADANIE 4 – getElementsByName()
+        // =========================================
+        // Wyszukaj wszystkie przyciski radio o nazwie "typSzkoly".
+        // Zaznacz domyślnie "Technikum".
+
+        const typySzkoly = document.getElementsByName("typSzkoly");
+        typySzkoly[0].checked = true;
+
+        // =========================================
+        // ZADANIE 5 – querySelector()
+        // =========================================
+        // Wyszukaj pierwszy element z klasą "card".
+        // Ustaw obramowanie: 2px solid red.
+
+        const card = document.querySelector(".card");
+        card.style.border = "2px solid red";
+
+        // =========================================
+        // ZADANIE 6 – querySelectorAll()
+        // =========================================
+        // Wyszukaj wszystkie elementy z klasą "card".
+        // Ustaw kolor tła każdej karty na #e0f2fe.
+
+        const cards = document.querySelectorAll(".card");
+        cards.forEach(el => el.style.backgroundColor = "#e0f2fe");
+
+
+        // =========================================
+        // ZADANIE 7 – closest()
+        // =========================================
+        // Wyszukaj nagłówek h3 w drugiej karcie.
+        // Za pomocą closest(".card")  znajdź jego najbliższego przodka z klasą "card".
+        // Zmień kolor obramowania tej karty na zielony.
+
+        const h3_card2 = h3s[1].closest(".card");
+        h3_card2.style.borderColor = "green";
+
+
+        // =========================================
+        // ZADANIE 8 – parentElement
+        // =========================================
+        // Wyszukaj akapit p w pierwszej karcie.
+        // Za pomocą parentElement znajdź jego element rodzica.
+        // Zmień kolor tła rodzica na #fff3cd.
+
+        const akapit = cards[0].querySelector("p");
+        akapit.parentElement.style.backgroundColor = "#fff3cd";
+
+        // =========================================
+        // ZADANIE 9 – children
+        // =========================================
+        // Wyszukaj sekcję "aktualnosci".
+        // Odczytaj liczbę jej bezpośrednich elementów potomnych.
+        // Wyświetl tę liczbę w elemencie o identyfikatorze "komunikat".
+
+        const aktualnosci = document.getElementById("aktualnosci");
+        const komunikat = document.getElementById("komunikat");
+        komunikat.textContent = aktualnosci.children.length;
+
+        // =========================================
+        // ZADANIE 10 – element.querySelector()
+        // =========================================
+        // Wyszukaj element o id "menu".
+        // Następnie wewnątrz menu wyszukaj ostatni odnośnik a.
+        // Zmień jego kolor tekstu na czerwony.
+
+        const menu = document.getElementById("menu");
+        menu.querySelector("a:last-child").style.color = "red";
+
+        // =========================================
+        // ZADANIE 11 – element.querySelectorAll()
+        // =========================================
+        // Wyszukaj sekcję "aktualnosci". Następnie wyszukaj wszystkie akapity p wewnątrz tej sekcji.
+        // Ustaw styl czcionki każdego akapitu na italic.
+
+        const akapity = aktualnosci.querySelectorAll("p");
+        akapity.forEach(el => el.style.fontStyle = "italic");
+
+        var i = 0;
+
+        setInterval(time_out, 100);
+
+        function time_out() {
+            /*var color = "#";
+            var r = Math.floor((Math.sin(i*1.0 * (Math.PI / 4000.0)) + 1.0 ) / 2.0 * 255.0);
+            var g = Math.floor((Math.sin(i*2.0 * (Math.PI / 4000.0)) + 1.0 ) / 2.0 * 255.0);
+            var b = Math.floor((Math.sin(i*4.0 * (Math.PI / 4000.0)) + 1.0 ) / 2.0 * 255.0);
+            color = color + r.toString(16).padStart(2, '0') + g.toString(16).padStart(2, '0') + b.toString(16).padStart(2, '0');
+
+            console.log(color);
+
+            cards.forEach(el => el.style.backgroundColor = color);*/
+
+            display_width = 20;
+            display_height = 10;
+            display = "";
+
+            for(let y = 0; y < display_height; y++) {
+                for(let x = 0; x < display_width; x++) {
+                    //display[y*display_width + x] = '.';
+                    display += '.';
+                }
+                display += '\n';
+            }
+
+            komunikat.textContent = display;
+
+            i++;
+        }
+
+    </script>
+
+</body>
+
+</html>
