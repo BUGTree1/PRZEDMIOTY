@@ -257,15 +257,22 @@
 
                 $uczniowie[1]["miasto"] = "Warszawa";
 
-                foreach($uczniowie as $uczen) {
-                    $uczen["status"] = "Aktywny";
+                $uczniowie_count = count($uczniowie);
+                for($i = 0; $i < $uczniowie_count; $i++) {
+                    $uczniowie[$i]["status"] = "Aktywny";
                 }
 
                 foreach($uczniowie as $uczen) {
                     echo "<tr>";
-                    foreach($uczen as $wartosc) {
-                        echo "<td>" . $wartosc . "</td>";
-                    }
+                    echo "<td>" . $uczen["imie"] . "</td>";
+                    echo "<td>" . $uczen["klasa"] . "</td>";
+                    echo "<td>" . $uczen["wiek"] . "</td>";
+                    echo "<td>";
+                    if(isset($uczen["miasto"])) echo $uczen["miasto"];
+                    echo "</td>";
+                    echo "<td>";
+                    if(isset($uczen["status"])) echo $uczen["status"];
+                    echo "</td>";
                     echo "</tr>";
                 }
 			?>
