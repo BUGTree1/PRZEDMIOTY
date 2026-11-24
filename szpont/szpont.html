@@ -414,16 +414,95 @@
         ctx.frontFace(ctx.CW);
 
         function get_mesh_from_obj(obj_source, mtl_source) {
+            let obj_vertices = [];
+            let obj_indices = [];
+            let obj_normal_indices = [];
+            let obj_normals = [];
+            let obj_usemtls = [];
+
+            let obj_lines = obj_source.split('\n');
+
+            let usemtl = "";
+            for(let l = 0; l < obj_lines.length; l++) {
+                if(obj_lines[l][0] === 'v' && !(obj_lines[l][1] === 'n')){
+                    // split by whitespace: .trim().split(/\s+/)
+                    const x = parseFloat(obj_lines[l].substr(1).trim().split(/\s+/)[0]);
+                    const y = parseFloat(obj_lines[l].substr(1).trim().split(/\s+/)[1]);
+                    const z = parseFloat(obj_lines[l].substr(1).trim().split(/\s+/)[2]);
+                    obj_vertices.push([x,y,z]);
+                } else if(obj_lines[l][0] === 'v' && obj_lines[l][1] === 'n'){
+                    // split by whitespace: .trim().split(/\s+/)
+                    const x = parseFloat(obj_lines[l].substr(2).trim().split(/\s+/)[0]);
+                    const y = parseFloat(obj_lines[l].substr(2).trim().split(/\s+/)[1]);
+                    const z = parseFloat(obj_lines[l].substr(2).trim().split(/\s+/)[2]);
+                    obj_normals.push([x,y,z]);
+                } else if(obj_lines[l].substr(0,"usemtl".length) === "usemtl"){
+                    usemtl = obj_lines[l].substr("usemtl".length).trim();
+                } else if(obj_lines[l][0] === 'f'){
+                    // split by whitespace: .trim().split(/\s+/)
+                    const vert1 = obj_lines[l].substr(1).trim().split(/\s+/)[0];
+                    const vert2 = obj_lines[l].substr(1).trim().split(/\s+/)[1];
+                    const vert3 = obj_lines[l].substr(1).trim().split(/\s+/)[2];
+
+                    const vert1_idx = parseInt(vert1.split("//")[0]);
+                    const vert2_idx = parseInt(vert2.split("//")[0]);
+                    const vert3_idx = parseInt(vert3.split("//")[0]);
+
+                    const vert1_normal_idx = parseInt(vert1.split("//")[1]);
+                    const vert2_normal_idx = parseInt(vert2.split("//")[1]);
+                    const vert3_normal_idx = parseInt(vert3.split("//")[1]);
+
+                    obj_indices.push([vert1_idx,vert2_idx,vert3_idx]);
+                    obj_normal_indices.push([vert1_normal_idx,vert2_normal_idx,vert3_normal_idx]);
+                    obj_usemtls.push(usemtl);
+                }
+            }
+
+            let mtl_colors = [];
+
+            let mtl_lines = mtl_source.split('\n');
+
+            let mtl_name = "";
+            for(let l = 0; l < mtl_lines.length; l++) {
+                if(mtl_lines[l].substr(0,"newmtl".length) === "newmtl"){
+                    mtl_name = mtl_lines[l].substr("newmtl".length).trim();
+                } else if(mtl_lines[l][0] === 'K' && mtl_lines[l][1] === 'd'){
+                    const r = parseFloat(mtl_lines[l].substr(2).trim().split(/\s+/)[0]);
+                    const g = parseFloat(mtl_lines[l].substr(2).trim().split(/\s+/)[1]);
+                    const b = parseFloat(mtl_lines[l].substr(2).trim().split(/\s+/)[2]);
+
+                    mtl_colors[mtl_name] = [r,g,b];
+                }
+            }
+
             let vertices = [];
             let indices = [];
             let normals = [];
             let colors = [];
 
-            let obj_lines = obj_source.split('\n');
-            for(let l = 0; l < obj_lines.length; l++) {
-                if(obj_lines[l][0] === 'v' && !(obj_lines[l][1] === 'n')){
-                    // split by whitespace
-                }
+            for(let i = 0; i < obj_vertices.length; i++) {
+                vertices.push(obj_vertices[0]);
+                vertices.push(obj_vertices[1]);
+                vertices.push(obj_vertices[2]);
+            }
+
+            for(let i = 0; i < obj_indices.length; i++) {
+                indices.push(obj_indices[0]);
+                indices.push(obj_indices[1]);
+                indices.push(obj_indices[2]);
+            }
+
+            for(let i = 0; i < obj_normal_indices.length; i++) {
+                console.log(i);
+                normals.push(obj_normals[obj_normal_indices[i][0]][0]);
+                normals.push(obj_normals[obj_normal_indices[i][0]][1]);
+                normals.push(obj_normals[obj_normal_indices[i][0]][2]);
+                normals.push(obj_normals[obj_normal_indices[i][1]][0]);
+                normals.push(obj_normals[obj_normal_indices[i][1]][1]);
+                normals.push(obj_normals[obj_normal_indices[i][1]][2]);
+                normals.push(obj_normals[obj_normal_indices[i][2]][0]);
+                normals.push(obj_normals[obj_normal_indices[i][2]][1]);
+                normals.push(obj_normals[obj_normal_indices[i][2]][2]);
             }
 
             return [vertices, indices, normals, colors];
